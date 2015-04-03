@@ -5,7 +5,28 @@ var game = {
 	// an object where to store game information
 	data : {
 		// score
-		score : 0
+		score : 0,
+                enemyBaseHealth: 10,
+                playerBaseHealth: 10,
+                enemyCreepHealth: 10,
+                playerHealth: 20,
+                enemyCreepAttack: 5,
+                playerAttack: 5,
+                playerAttackTimer: 1000,
+                enemyCreepAttackTimer: 1000,
+                playerMoveSpeed: 5,
+                enemyCreepMoveSpeed: 5,
+                gameTimerManager: "",
+                heroDeathManager: "",
+                player: "",
+                exp: 0,
+                gold: 0,
+                exp1: 0,
+                exp2: 0,
+                exp3: 0,
+                exp4: 0,
+                win: "",
+                
 	},
 	
 	
@@ -23,9 +44,11 @@ var game = {
 			me.plugin.register.defer(this, debugPanel, "debug");
 		});
 	}
+        
+        me.save.add({exp: 0, exp1: 0, exp2: 0, exp3: 0, exp4: 0});
 
 	// Initialize the audio.
-	me.audio.init("mp3,ogg");
+	me.audio.init("mp3");
 
 	// Set a callback to run when loading is complete.
 	me.loader.onload = this.loaded.bind(this);
@@ -43,12 +66,17 @@ var game = {
                 me.pool.register("player", game.PlayerEntity, true);
                 me.pool.register("PlayerBase", game.PlayerBaseEntity);
                 me.pool.register("EnemyBase", game.EnemyBaseEntity);
+                me.pool.register("EnemyCreep", game.EnemyCreep, true);
+                me.pool.register("GameTimerManager", game.GameTimerManager);
+                me.pool.register("HeroDeathManager", game.HeroDeathManager);
+                me.pool.register("GainExpTimer", game.GainExpTimer);
                 
                 
 		me.state.set(me.state.MENU, new game.TitleScreen());
+                me.state.set(me.state.LOSE, new game.GameOverScreen());
 		me.state.set(me.state.PLAY, new game.PlayScreen());
 
 		// Start the game.
-		me.state.change(me.state.PLAY);
+		me.state.change(me.state.MENU);
 	}
 };

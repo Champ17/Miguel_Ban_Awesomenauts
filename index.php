@@ -28,8 +28,14 @@
 		<script type="text/javascript" src="js/resources.js"></script>
 
 		<script type="text/javascript" src="js/entities/entities.js"></script>
+                <script src="js/entities/PlayerBaseEntity.js" type="text/javascript"></script>
+                <script src="js/entities/GameManager.js" type="text/javascript"></script>
+                <script src="js/entities/EnemyCreepEntity.js" type="text/javascript"></script>
+                <script src="js/entities/EnemyBaseEntity.js" type="text/javascript"></script>
+                
 		<script type="text/javascript" src="js/entities/HUD.js"></script>
-
+                
+                <script src="js/screens/GameOver.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/screens/title.js"></script>
 		<script type="text/javascript" src="js/screens/play.js"></script>
 		<!-- /build -->

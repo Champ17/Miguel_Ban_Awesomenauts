@@ -9,6 +9,9 @@ game.resources = [
     {name: "meta-tiles", type: "image", src: "data/img/meta-tiles.png"},
     {name: "player", type: "image", src: "data/img/skeletonDagger.png"},
     {name: "tower", type: "image", src: "data/img/tower.svg.png"},
+    {name: "creep1", type: "image", src: "data/img/brainmonster.png"},
+    {name: "title-screen", type: "image", src: "data/img/title.png"},
+    {name: "Death-screen", type: "image", src: "data/img/Dead.png"},
     
     /* Atlases 
      * @example

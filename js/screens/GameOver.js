@@ -23,6 +23,30 @@ game.GameOverScreen = me.ScreenObject.extend({
                  me.state.change(me.state.PLAY);
              } 
           });
+          
+            me.game.world.addChild(new(me.Renderable.extend({
+                    init: function(){
+                      this._super(me.Renderable, "init", [380, 470, 350, 550]);  
+                      this.font = new me.Font("Arial", 46, "white");
+                      me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
+                        
+                    },
+                    draw: function(renderer){
+                       //this.font.draw(renderer.getContext(), "Awesomenaunts", 450, 130 );
+                       this.font.draw(renderer.getContext(), "Exit", this.pos.x, this.pos.y);                                           
+                    },
+                    
+                    update: function(dt){
+                        return true;
+                    },
+                    
+                    newGame: function(){
+                        me.input.releasePointerEvent('pointerdown', this);
+                        me.state.change(me.state.MENU);
+                    }
+                    
+                })));
+                
                 
 	},
 	

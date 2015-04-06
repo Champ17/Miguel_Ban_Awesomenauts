@@ -12,6 +12,8 @@ game.resources = [
     {name: "creep1", type: "image", src: "data/img/brainmonster.png"},
     {name: "title-screen", type: "image", src: "data/img/title.png"},
     {name: "Death-screen", type: "image", src: "data/img/Dead.png"},
+    {name: "Win-screen", type: "image", src: "data/img/WIN.png"},
+    {name: "Exp-screen", type: "image", src: "data/img/EXP.jpg"},
     
     /* Atlases 
      * @example

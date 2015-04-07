@@ -26,7 +26,7 @@ game.GameOverScreen = me.ScreenObject.extend({
           
             me.game.world.addChild(new(me.Renderable.extend({
                     init: function(){
-                      this._super(me.Renderable, "init", [380, 470, 350, 550]);  
+                      this._super(me.Renderable, "init", [480, 470, 350, 550]);  
                       this.font = new me.Font("Arial", 46, "white");
                       me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
                         

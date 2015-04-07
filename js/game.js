@@ -46,7 +46,7 @@ var game = {
 	}
         
         me.save.add({exp: 0, exp1: 0, exp2: 0, exp3: 0, exp4: 0});
-        
+
         me.state.SpendExp = 112;
 
 	// Initialize the audio.
@@ -75,11 +75,11 @@ var game = {
                 
                 
 		me.state.set(me.state.MENU, new game.TitleScreen());
-                me.state.set(me.state.LOSE, new game.GameOverScreen());
+                me.state.set(me.state.GAMEOVER, new game.GameOverScreen());
 		me.state.set(me.state.PLAY, new game.PlayScreen());
                 me.state.set(me.state.WINZ, new game.WinScreen());
                 me.state.set(me.state.SpendExp, new game.spendExp());
-                
+
 
 		// Start the game.
 		me.state.change(me.state.MENU);

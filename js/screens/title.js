@@ -1,4 +1,4 @@
-    game.TitleScreen = me.ScreenObject.extend({
+game.TitleScreen = me.ScreenObject.extend({
 	/**	
 	 *  action to perform on state change
 	 */
@@ -55,7 +55,7 @@
                        game.data.exp2 = me.save.exp2;
                        game.data.exp3 = me.save.exp3;
                        game.data.exp4 = me.save.exp4;
-                       me.input.releasePointerEvent('pointerdown', this);
+                        me.input.releasePointerEvent('pointerdown', this);
                        me.state.change(me.state.SpendExp);
  
                     }

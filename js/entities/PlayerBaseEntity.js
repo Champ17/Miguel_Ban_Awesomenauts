@@ -26,7 +26,7 @@ game.PlayerBaseEntity = me.Entity.extend({
             game.data.win = false; 
             this.broken = true;
             this.renderable.setCurrentAnimation("broken");
-            me.state.change(me.state.LOSE);
+            me.state.change(me.state.GAMEOVER);
         }
         this.body.update(delta);
 

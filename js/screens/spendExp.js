@@ -32,4 +32,3 @@ game.spendExp = me.ScreenObject.extend({
                   
 	}
 });
-

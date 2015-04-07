@@ -21,7 +21,7 @@ game.GameTimerManager = Object.extend({
   },
   
   creepTimerCheck: function(){
-        if (Math.round(this.now / 1000) % 10 === 0 && (this.now - this.lastCreep >= 1000)) {
+        if (Math.round(this.now / 1000) % 10 === 0 && (this.now - this.lastCreep >= 100)) {
             this.lastCreep = this.now;
             var creepe = me.pool.pull("EnemyCreep", 1000, 0, {});
             me.game.world.addChild(creepe, 5);

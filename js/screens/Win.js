@@ -22,7 +22,15 @@ game.WinScreen = me.ScreenObject.extend({
              if(action === "start"){
                  me.state.change(me.state.PLAY);
              } 
+             
           });
+          
+          
                      
-}});
+},
+   onDestroyEvent: function() {
+                    me.input.unbindKey(me.input.KEY.ENTER);
+                    me.event.unsubscribe(this.handler); // TODO
+	}
+});
 

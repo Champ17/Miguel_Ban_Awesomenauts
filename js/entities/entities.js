@@ -137,7 +137,6 @@ game.PlayerEntity = me.Entity.extend(   {
     
     loseHealth: function(damage) {
         this.health = this.health - damage;
-        console.log(this.health);
     },
     
     collideHandler: function(response) {
@@ -164,7 +163,7 @@ game.PlayerEntity = me.Entity.extend(   {
                 this.pos.x = this.pos.x + 1;
             }
             if (this.renderable.isCurrentAnimation("attack") && this.now - this.lastHit >= game.data.playerAttackTimer) {
-                console.log("tower hit");
+               
                 this.lastHit = this.now;
                 response.b.loseHealth(game.data.playerAttack);
             }

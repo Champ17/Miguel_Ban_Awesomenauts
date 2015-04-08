@@ -35,7 +35,7 @@
                 
 		<script type="text/javascript" src="js/entities/HUD.js"></script>
                 
-                <script src="js/screens/spendExp.js" type="text/javascript"></script>
+                <script src="js/screens/SpendExpScreen.js" type="text/javascript"></script>
                 <script src="js/screens/Win.js" type="text/javascript"></script>
                 <script src="js/screens/GameOver.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/screens/title.js"></script>

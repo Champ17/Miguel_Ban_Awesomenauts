@@ -9,9 +9,9 @@ var game = {
                 enemyBaseHealth: 10,
                 playerBaseHealth: 10,
                 enemyCreepHealth: 10,
-                playerHealth: 20,
+                playerHealth: 100,
                 enemyCreepAttack: 5,
-                playerAttack: 5,
+                playerAttack: 100,
                 playerAttackTimer: 1000,
                 enemyCreepAttackTimer: 1000,
                 playerMoveSpeed: 5,
@@ -46,8 +46,9 @@ var game = {
 	}
         
         me.save.add({exp: 0, exp1: 0, exp2: 0, exp3: 0, exp4: 0});
+        console.log(game.data.exp);
 
-        me.state.SpendExp = 112;
+        me.state.SPENDEXP = 112;
 
 	// Initialize the audio.
 	me.audio.init("mp3");
@@ -78,7 +79,7 @@ var game = {
                 me.state.set(me.state.GAMEOVER, new game.GameOverScreen());
 		me.state.set(me.state.PLAY, new game.PlayScreen());
                 me.state.set(me.state.WINZ, new game.WinScreen());
-                me.state.set(me.state.SpendExp, new game.spendExp());
+                me.state.set(me.state.SPENDEXP, new game.spendExp());
 
 
 		// Start the game.

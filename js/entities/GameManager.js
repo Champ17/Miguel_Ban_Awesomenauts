@@ -51,16 +51,16 @@ game.GainExpTimer = Object.extend({
    
    update: function(){
        if(game.data.win === true && !this.gameover){
-         this.gameover(true);
+         this.gameOver(true);
        }else if(game.data.win === false && !this.gameover){
-         this.gameover(false);
+         this.gameOver(false);
        }
    },
    
    gameOver: function(win){
        if(win){
             game.data.exp += 10;
-            console.log(game.data.exp);
+             console.log(game.data.exp);
        }else{
             game.data.exp +=1;
        }

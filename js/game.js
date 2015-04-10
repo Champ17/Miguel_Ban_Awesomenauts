@@ -26,10 +26,11 @@ var game = {
                 exp3: 0,
                 exp4: 0,
                 win: "",
-                
-	},
-	
-	
+                pausePos: "",
+                buyscreen: "",
+                                                                    
+    }, 
+        
 	// Run on page load.
 	"onload" : function () {
 	// Initialize the video.
@@ -73,6 +74,7 @@ var game = {
                 me.pool.register("GameTimerManager", game.GameTimerManager);
                 me.pool.register("HeroDeathManager", game.HeroDeathManager);
                 me.pool.register("GainExpTimer", game.GainExpTimer);
+                me.pool.register("SpendGold", game.SpendGold);
                 
                 
 		me.state.set(me.state.MENU, new game.TitleScreen());

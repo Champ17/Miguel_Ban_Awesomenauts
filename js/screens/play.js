@@ -17,8 +17,15 @@ game.PlayScreen = me.ScreenObject.extend({
         me.game.world.addChild(heroDeathManager, 0);
         
         var gainExpTimer = me.pool.pull("GainExpTimer", 0, 0, {});
-        me.game.world.addChild(gainExpTimer, 0); 
+        me.game.world.addChild(gainExpTimer, 0);
+        
+        var spendGold = me.pool.pull("SpendGold", 0, 0, {});
+        me.game.world.addChild(spendGold, 0); 
 
+        me.input.bindKey(me.input.KEY.B, "buy");
+        me.input.bindKey(me.input.KEY.Q, "skill1");
+        me.input.bindKey(me.input.KEY.W, "skill2");
+        me.input.bindKey(me.input.KEY.E, "skill3");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.LEFT, "Left");
         me.input.bindKey(me.input.KEY.UP, "jump");

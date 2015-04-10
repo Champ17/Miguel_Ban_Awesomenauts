@@ -14,6 +14,7 @@ game.resources = [
     {name: "Death-screen", type: "image", src: "data/img/Dead.jpg"},
     {name: "Win-screen", type: "image", src: "data/img/WIN.png"},
     {name: "Exp-screen", type: "image", src: "data/img/EXP.jpg"},
+    {name: "Gold-screen", type: "image", src: "data/img/gold.jpg"},
     
     /* Atlases 
      * @example

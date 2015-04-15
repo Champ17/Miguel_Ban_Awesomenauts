@@ -104,13 +104,55 @@ game.SpendGold = Object.extend({
         game.data.buyscreen.setOpacity(0.8);
         me.game.world.addChild(game.data.buyscreen, 34);
         game.data.player.body.setVelocity(0, 0);
-//        me.input.bind.K
-    },  
+        me.input.bindKey(me.input.KEY.F1, "F1");
+        me.input.bindKey(me.input.KEY.F2, "F2");
+        me.input.bindKey(me.input.KEY.F3, "F3");
+        me.input.bindKey(me.input.KEY.F4, "F4");
+        me.input.bindKey(me.input.KEY.F5, "F5");
+        me.input.bindKey(me.input.KEY.F6, "F6");
+        this.setBuyText();
+    },
+    
+    setBuyText: function(){
+       game.data.buytext = new (me.Renderable.extend({
+            init: function() {
+                this._super(me.Renderable, "init", [game.data.pausePos.x, game.data.pausePos.y, 350, 550]);
+                this.font = new me.Font("Arial", 26, "white");
+                this.updateWhenPaused = true;
+                this.alwaysUpdate = true;
+
+
+            },
+            draw: function(renderer) {
+                //this.font.draw(renderer.getContext(), "Awesomenaunts", 450, 130 );
+              this.font.draw(renderer.getContext(), "PRESS F1-F6 TO BUY, B TO EXIT", this.pos.x, this.pos.y);
+              this.font.draw(renderer.getContext(), "PRESS F1-F6 TO BUY, B TO EXIT", this.pos.x, this.pos.y + 40);
+              this.font.draw(renderer.getContext(), "PRESS F1-F6 TO BUY, B TO EXIT", this.pos.x, this.pos.y + 80);
+              this.font.draw(renderer.getContext(), "PRESS F1-F6 TO BUY, B TO EXIT", this.pos.x, this.pos.y + 120);
+              this.font.draw(renderer.getContext(), "PRESS F1-F6 TO BUY, B TO EXIT", this.pos.x, this.pos.y + 160);
+              this.font.draw(renderer.getContext(), "PRESS F1-F6 TO BUY, B TO EXIT", this.pos.x, this.pos.y + 200);
+              this.font.draw(renderer.getContext(), "PRESS F1-F6 TO BUY, B TO EXIT", this.pos.x, this.pos.y + 240);
+             
+            },
+            update: function(){
+                return true;
+            }
+
+        }));
+        me.game.world.addChild(game.data.buytext, 35);
+    },
     
     stopBuying: function(){
         this.buying = false;
         me.state.resume(me.state.PLAY);
         game.data.player.body.setVelocity(game.data.playerMoveSpeed, 20);
         me.game.world.removeChild(game.data.buyscreen);
+        me.input.unbindKey(me.input.KEY.F1, "F1");
+        me.input.unbindKey(me.input.KEY.F2, "F2");
+        me.input.unbindKey(me.input.KEY.F3, "F3");
+        me.input.unbindKey(me.input.KEY.F4, "F4");
+        me.input.unbindKey(me.input.KEY.F5, "F5");
+        me.input.unbindKey(me.input.KEY.F6, "F6");
+        me.game.world.removeChild(game.data.buytext);
     }
 });

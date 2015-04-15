@@ -5,11 +5,11 @@ game.spendExp = me.ScreenObject.extend({
     onResetEvent: function() {
         me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage("Exp-screen")), -10); // TODO
 
-        me.input.bindKey(me.input.KEY.K, "K");
+        me.input.bindKey(me.input.KEY.F1, "F!");
         me.input.bindKey(me.input.KEY.F2, "F2");
         me.input.bindKey(me.input.KEY.F3, "F3");
         me.input.bindKey(me.input.KEY.F4, "F4");
-        me.input.bindKey(me.input.KEY.Z, "Z");
+        me.input.bindKey(me.input.KEY.F5,  "F5");
         var exp1cost = ((game.data.exp1 + 1) * 10);
         var exp2cost = ((game.data.exp2 + 1) * 10);
         game.data.exp = 50; //TESTING
@@ -38,7 +38,7 @@ game.spendExp = me.ScreenObject.extend({
         })));
 
         this.handler = me.event.subscribe(me.event.KEYDOWN, function(action, keyCode, edge) {
-            if (action === "K") {
+            if (action === "F!") {
              if(game.data.exp >= exp1cost) {
                  game.data.exp1 += 1;
                  game.data.exp -= exp1cost;
@@ -54,7 +54,7 @@ game.spendExp = me.ScreenObject.extend({
 
             } else if (action === "F4") {
 
-            } else if (action === "Z") {
+            } else if (action === "F5") {
                 me.state.change(me.state.PLAY);
             }
         });

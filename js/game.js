@@ -9,9 +9,9 @@ var game = {
                 enemyBaseHealth: 10,
                 playerBaseHealth: 10,
                 enemyCreepHealth: 10,
-                playerHealth: 100,
+                playerHealth: 15,
                 enemyCreepAttack: 5,
-                playerAttack: 100,
+                playerAttack: 5,
                 playerAttackTimer: 1000,
                 enemyCreepAttackTimer: 1000,
                 playerMoveSpeed: 5,
@@ -28,6 +28,7 @@ var game = {
                 win: "",
                 pausePos: "",
                 buyscreen: "",
+                buytext: "",
                                                                     
     }, 
         

@@ -85,16 +85,16 @@ game.SpendGold = Object.extend({
         this.now = new Date().getTime();
         if(me.input.isKeyPressed("buy") && this.now - this.lastBuy >= 1000){
             this.lastBuy = this.now;
-        }
+        
         if(!this.buying){
             this.startBuying();
         }else{
             this.stopBuying();
         }        
-        
-        return true;
-    },
     
+        return true;
+    }
+ },
     startBuying: function(){
         this.buying = true;
         me.state.pause(me.state.PLAY);
@@ -104,6 +104,7 @@ game.SpendGold = Object.extend({
         game.data.buyscreen.setOpacity(0.8);
         me.game.world.addChild(game.data.buyscreen, 34);
         game.data.player.body.setVelocity(0, 0);
+//        me.input.bind.K
     },  
     
     stopBuying: function(){

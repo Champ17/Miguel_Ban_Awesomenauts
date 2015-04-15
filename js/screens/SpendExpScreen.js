@@ -5,12 +5,14 @@ game.spendExp = me.ScreenObject.extend({
     onResetEvent: function() {
         me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage("Exp-screen")), -10); // TODO
 
-        me.input.bindKey(me.input.KEY.F1, "F1");
+        me.input.bindKey(me.input.KEY.K, "K");
         me.input.bindKey(me.input.KEY.F2, "F2");
         me.input.bindKey(me.input.KEY.F3, "F3");
         me.input.bindKey(me.input.KEY.F4, "F4");
-        me.input.bindKey(me.input.KEY.F5, "F5");
+        me.input.bindKey(me.input.KEY.Z, "Z");
         var exp1cost = ((game.data.exp1 + 1) * 10);
+        var exp2cost = ((game.data.exp2 + 1) * 10);
+        game.data.exp = 50; //TESTING
 
         me.game.world.addChild(new (me.Renderable.extend({
             init: function() {
@@ -23,28 +25,36 @@ game.spendExp = me.ScreenObject.extend({
                 //this.font.draw(renderer.getContext(), "Awesomenaunts", 450, 130 );
                 this.font.draw(renderer.getContext(), "PRESS F1-F4 TO BUY, F5 TO SKIP", this.pos.x, this.pos.y);
                 this.font.draw(renderer.getContext(), "CURRENT EXP: " + game.data.exp.toString(), this.pos.x, this.pos.y + 50);
-                this.font.draw(renderer.getContext(), "F1: INCREASE GOLD PRODUCTION CURRENT LEVEL: " + game.data.exp1.toString() + " COSTS: " + exp1cost, this.pos.x, this.pos.y + 100);
-                this.font.draw(renderer.getContext(), "F2: ADD STARTING GOLD ", this.pos.x, this.pos.y + 150);
+                this.font.draw(renderer.getContext(), "F1: INCREASE GOLD PRODUCTION CURRENT LEVEL : " + game.data.exp1.toString() + " COSTS: " + exp1cost, this.pos.x, this.pos.y + 100);
+                this.font.draw(renderer.getContext(), "F2: ADD STARTING GOLD  CURRENT LEVEL : " + game.data.exp2.toString() + " COST: " + exp2cost, this.pos.x, this.pos.y + 150);
                 this.font.draw(renderer.getContext(), "F3: INCREASE ATTACK DAMAGE: ", this.pos.x, this.pos.y + 200);
                 this.font.draw(renderer.getContext(), "F4: INCREASE STARTING HEALTH ", this.pos.x, this.pos.y + 250);
+            },
+            
+            update: function(){
+                return true;
             }
 
         })));
 
         this.handler = me.event.subscribe(me.event.KEYDOWN, function(action, keyCode, edge) {
-            if (action === "F1") {
+            if (action === "K") {
              if(game.data.exp >= exp1cost) {
                  game.data.exp1 += 1;
                  game.data.exp -= exp1cost;
-                 me.state.change(me.state.PLAY);
+                 exp1cost = ((game.data.exp1 + 1) * 10);
              }
             } else if (action === "F2") {
-
+                 if(game.data.exp >= exp2cost){
+                     game.data.exp2 += 1;
+                     game.data.exp -= exp2cost;
+                     exp2cost = ((game.data.exp2 + 1) * 10);
+                 }
             } else if (action === "F3") {
 
             } else if (action === "F4") {
 
-            } else if (action === "F5") {
+            } else if (action === "Z") {
                 me.state.change(me.state.PLAY);
             }
         });

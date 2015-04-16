@@ -9,10 +9,12 @@ game.spendExp = me.ScreenObject.extend({
         me.input.bindKey(me.input.KEY.F2, "F2");
         me.input.bindKey(me.input.KEY.F3, "F3");
         me.input.bindKey(me.input.KEY.F4, "F4");
-        me.input.bindKey(me.input.KEY.F5,  "F5");
+        me.input.bindKey(me.input.KEY.F5, "F5");
         var exp1cost = ((game.data.exp1 + 1) * 10);
         var exp2cost = ((game.data.exp2 + 1) * 10);
-        game.data.exp = 50; //TESTING
+        var exp3cost = ((game.data.exp3 + 1) * 10);
+        game.data.exp = 1000; //TESTING
+        game.data.gold = 1000;//TESTING
 
         me.game.world.addChild(new (me.Renderable.extend({
             init: function() {
@@ -27,11 +29,10 @@ game.spendExp = me.ScreenObject.extend({
                 this.font.draw(renderer.getContext(), "CURRENT EXP: " + game.data.exp.toString(), this.pos.x, this.pos.y + 50);
                 this.font.draw(renderer.getContext(), "F1: INCREASE GOLD PRODUCTION CURRENT LEVEL : " + game.data.exp1.toString() + " COSTS: " + exp1cost, this.pos.x, this.pos.y + 100);
                 this.font.draw(renderer.getContext(), "F2: ADD STARTING GOLD  CURRENT LEVEL : " + game.data.exp2.toString() + " COST: " + exp2cost, this.pos.x, this.pos.y + 150);
-                this.font.draw(renderer.getContext(), "F3: INCREASE ATTACK DAMAGE: ", this.pos.x, this.pos.y + 200);
+                this.font.draw(renderer.getContext(), "F3: INCREASE ATTACK DAMAGE  CURRENT LEVEL: " + game.data.exp3.toString() + " COST: " + exp3cost, this.pos.x, this.pos.y + 200);
                 this.font.draw(renderer.getContext(), "F4: INCREASE STARTING HEALTH ", this.pos.x, this.pos.y + 250);
             },
-            
-            update: function(){
+            update: function() {
                 return true;
             }
 
@@ -39,19 +40,23 @@ game.spendExp = me.ScreenObject.extend({
 
         this.handler = me.event.subscribe(me.event.KEYDOWN, function(action, keyCode, edge) {
             if (action === "F!") {
-             if(game.data.exp >= exp1cost) {
-                 game.data.exp1 += 1;
-                 game.data.exp -= exp1cost;
-                 exp1cost = ((game.data.exp1 + 1) * 10);
-             }
+                if (game.data.exp >= exp1cost) {
+                    game.data.exp1 += 1;
+                    game.data.exp -= exp1cost;
+                    exp1cost = ((game.data.exp1 + 1) * 10);
+                }
             } else if (action === "F2") {
-                 if(game.data.exp >= exp2cost){
-                     game.data.exp2 += 1;
-                     game.data.exp -= exp2cost;
-                     exp2cost = ((game.data.exp2 + 1) * 10);
-                 }
+                if (game.data.exp >= exp2cost) {
+                    game.data.exp2 += 1;
+                    game.data.exp -= exp2cost;
+                    exp2cost = ((game.data.exp2 + 1) * 10);
+                }
             } else if (action === "F3") {
-
+                if (game.data.exp >= exp3cost) {
+                    game.data.exp3 += 1;
+                    game.data.exp -= exp3cost;
+                    exp3cost = ((game.data.exp3 + 1) * 10);
+                }
             } else if (action === "F4") {
 
             } else if (action === "F5") {
@@ -59,7 +64,7 @@ game.spendExp = me.ScreenObject.extend({
             }
         });
 
-   },
+    },
     /**	
      *  action to perform when leaving this screen (state change)
      */

@@ -15,6 +15,8 @@ game.resources = [
     {name: "Win-screen", type: "image", src: "data/img/WIN.png"},
     {name: "Exp-screen", type: "image", src: "data/img/EXP.jpg"},
     {name: "Gold-screen", type: "image", src: "data/img/gold.jpg"},
+    {name: "New-screen", type: "image", src: "data/img/newpic.png"},
+    {name: "Load-screen", type: "image", src: "data/img/loadpic.png"},
     
     /* Atlases 
      * @example

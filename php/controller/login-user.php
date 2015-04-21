@@ -1,5 +1,4 @@
 <?php
-
 require_once(__DIR__ . "/../model/config.php");
 //This code gets the variable from config or directs you to the config file.//
 
@@ -29,15 +28,15 @@ if ($query->num_rows == 1) {
         $array["exp2"] = $row["exp2"];
         $array["exp3"] = $row["exp3"];
         $array["exp4"] = $row["exp4"];
+        $_SESSION["name"] = $username;
         
-        echo json_decode($array);
+        echo json_encode($array);
         
-        header("Location: " . $path . "index.php");
     } else {
-        echo "<p>Invalid username and password1</p>";
+        echo "Invalid username and password";
         // The first echo  tells you that you one to many user with the same username.
     }
 } else {
-    echo "<p>Invalid username and password2</p>";
+    echo "Invalid username and password";
     //       The second echo tells you that there something wrong inside your code.
 }

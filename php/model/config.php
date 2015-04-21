@@ -18,8 +18,6 @@
 
     $database = "awesomenauts_db";
     /* This is the name of my database */
-   
-    
     
     if(!isset($_SESSION["connection"])){       
        echo "new session";

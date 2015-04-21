@@ -55,6 +55,7 @@
         <script src="js/entities/PlayerBaseEntity.js" type="text/javascript"></script>
         <script src="js/entities/EnemyCreepEntity.js" type="text/javascript"></script>
         <script src="js/entities/EnemyBaseEntity.js" type="text/javascript"></script>
+        <script src="js/entities/MiniMap.js" type="text/javascript"></script>
         <script src="js/gamemanger/GameManager.js" type="text/javascript"></script>
         <script src="js/gamemanger/GameTimeManager.js" type="text/javascript"></script>
         <script src="js/gamemanger/SpendGold.js" type="text/javascript"></script>

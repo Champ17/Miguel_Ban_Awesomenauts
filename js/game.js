@@ -34,6 +34,7 @@ var game = {
         pausePos: "",
         buyscreen: "",
         buytext: "",
+        minimap: "",
     },
     // Run on page load.
     "onload": function() {
@@ -76,6 +77,7 @@ var game = {
         me.pool.register("HeroDeathManager", game.HeroDeathManager);
         me.pool.register("GainExpTimer", game.GainExpTimer);
         me.pool.register("SpendGold", game.SpendGold);
+        me.pool.register("minimap", game.Minimap, true);
 
 
 

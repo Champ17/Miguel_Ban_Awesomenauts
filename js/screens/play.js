@@ -8,7 +8,7 @@ game.PlayScreen = me.ScreenObject.extend({
 
         me.levelDirector.loadLevel("Level 01");
 
-       this.resetPlayer(0, 420);
+       this.resetPlayer(10, 0);
         
         var gameTimerManager = me.pool.pull("GameTimerManager", 0, 0, {});
         me.game.world.addChild(gameTimerManager, 0);
@@ -20,12 +20,15 @@ game.PlayScreen = me.ScreenObject.extend({
         me.game.world.addChild(gainExpTimer, 0);
         
         var spendGold = me.pool.pull("SpendGold", 0, 0, {});
-        me.game.world.addChild(spendGold, 0); 
+        me.game.world.addChild(spendGold, 0);
+        
+        game.data.minimap = me.pool.pull("minimap", 10, 10, {});
+        me.game.world.addChild(game.data.minimap, 30);
         
         game.data.gold += (game.data.exp2 + 1);
         console.log(game.data.gold);
 
-        game.data.playerAttack+= (game.data.exp3 + 1);
+        game.data.playerAttack += (game.data.exp3 + 1);
         console.log(game.data.playerAttack);
 
         me.input.bindKey(me.input.KEY.B, "buy");

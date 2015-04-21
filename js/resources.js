@@ -17,6 +17,7 @@ game.resources = [
     {name: "Gold-screen", type: "image", src: "data/img/gold.jpg"},
     {name: "New-screen", type: "image", src: "data/img/newpic.png"},
     {name: "Load-screen", type: "image", src: "data/img/loadpic.png"},
+    {name: "miniMap", type: "image", src: "data/img/miniMap.png"},
     
     /* Atlases 
      * @example
@@ -30,6 +31,8 @@ game.resources = [
      */
 
     {name: "Level 01", type: "tmx", src: "data/map/text.tmx"},
+    
+    
     /* Background music. 
      * @example
      * {name: "example_bgm", type: "audio", src: "data/bgm/"},

@@ -13,6 +13,8 @@ game.spendExp = me.ScreenObject.extend({
         var exp1cost = ((Number(game.data.exp1) + 1) * 10);
         var exp2cost = ((Number(game.data.exp2) + 1) * 10);
         var exp3cost = ((Number(game.data.exp3) + 1) * 10);
+        
+        game.data.gold = 20;
 
         me.game.world.addChild(new (me.Renderable.extend({
             init: function() {

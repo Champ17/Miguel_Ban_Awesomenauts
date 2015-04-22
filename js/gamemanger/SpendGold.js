@@ -18,11 +18,11 @@ game.SpendGold = Object.extend({
             } else {
                 this.stopBuying();
             }
-
+            }
             this.checkBuyKeys();
 
             return true;
-        }
+        
     },
     
     startBuying: function() {
@@ -87,7 +87,9 @@ game.SpendGold = Object.extend({
     },
     
     checkBuyKeys: function() {
+        console.log("checking");
         if (me.input.isKeyPressed("D")) {
+            console.log("dr");
             if (this.checkCost(1)) {
                 this.makePurchase(1);
             }

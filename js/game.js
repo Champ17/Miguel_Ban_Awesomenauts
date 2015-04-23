@@ -78,6 +78,7 @@ var game = {
         me.pool.register("GainExpTimer", game.GainExpTimer);
         me.pool.register("SpendGold", game.SpendGold);
         me.pool.register("minimap", game.Minimap, true);
+        me.pool.register("miniplayer", game.MiniPlayerLocation, true);
 
 
 

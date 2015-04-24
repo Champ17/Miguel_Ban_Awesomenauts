@@ -23,22 +23,30 @@ game.MiniPlayerLocation = me.Entity.extend({
        
        var my = this;
        this._super(me.Entity, "init", [x, y, {
-           width: my.diamension,
-           height: my.diamension,
-           spritewidth: my.diamension,
-           spriteheight: my.diamension,
+           width: 14,
+           height: 14,
+           spritewidth: 14,
+           spriteheight: 14,
            getShape: function(){
-                 return(new me.Rect(0, 0, my.diamension, my.diamension)).toPolygon();   
+                 return(new me.Rect(0, 0, 14, 14)).toPolygon();   
            }              
        }]);
    },
    
-   draw: function(){
-       this._super(me.Entity, "draw", [renderer])
+   draw: function(renderer){
+       this._super(me.Entity, "draw", [renderer]);
+       this.floating = true;
+       renderer.drawImage(
+               this.image,
+               0, 0, this.width, this.height,
+               this.pos.x, this.pos.y, this.width, this.height 
+               );
    },
    
    update: function(){
-       
+       this.pos.x = (10 + (game.data.player.pos.x * 0.062));
+       this.pos.y = (10+(game.data.player.pos.y * 0.06));
+       return true;
    }
 
 });

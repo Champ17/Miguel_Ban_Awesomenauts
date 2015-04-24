@@ -35,6 +35,7 @@ var game = {
         buyscreen: "",
         buytext: "",
         minimap: "",
+        miniplayer: "",
     },
     // Run on page load.
     "onload": function() {

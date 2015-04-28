@@ -18,6 +18,7 @@ game.resources = [
     {name: "New-screen", type: "image", src: "data/img/newpic.png"},
     {name: "Load-screen", type: "image", src: "data/img/loadpic.png"},
     {name: "miniMap", type: "image", src: "data/img/miniMap.png"},
+    {name: "space", type:"image", src: "data/img/space.jpg"},
     
     /* Atlases 
      * @example

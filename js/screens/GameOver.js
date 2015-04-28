@@ -20,7 +20,7 @@ game.GameOverScreen = me.ScreenObject.extend({
                 })));
           this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge){
              if(action === "start"){
-                 me.state.change(me.state.PLAY);
+                 me.state.change(me.state.SPENDEXP);
              } 
           });
           

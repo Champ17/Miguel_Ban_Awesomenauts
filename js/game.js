@@ -34,6 +34,8 @@ var game = {
         pausePos: "",
         buyscreen: "",
         buytext: "",
+        pausedscreen: "",
+        pausedtext: "",
         minimap: "",
         miniplayer: "",
     },
@@ -80,6 +82,7 @@ var game = {
         me.pool.register("SpendGold", game.SpendGold);
         me.pool.register("minimap", game.Minimap, true);
         me.pool.register("miniplayer", game.MiniPlayerLocation, true);
+        me.pool.register("paused", game.Paused, true);
 
 
 

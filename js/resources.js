@@ -19,6 +19,7 @@ game.resources = [
     {name: "Load-screen", type: "image", src: "data/img/loadpic.png"},
     {name: "miniMap", type: "image", src: "data/img/miniMap.png"},
     {name: "space", type:"image", src: "data/img/space.jpg"},
+    {name: "paused", type:"image", src: "data/img/gun pause.png"},
     
     /* Atlases 
      * @example
@@ -38,6 +39,11 @@ game.resources = [
      * @example
      * {name: "example_bgm", type: "audio", src: "data/bgm/"},
      */
+    
+     {name: "Zelda", type: "audio", src: "data/bgm/"},
+     {name: "link", type: "audio", src: "data/bgm/"},
+
+
 
     /* Sound effects. 
      * @example

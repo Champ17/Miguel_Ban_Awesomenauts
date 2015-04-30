@@ -60,6 +60,7 @@
         <script src="js/gamemanger/GameManager.js" type="text/javascript"></script>
         <script src="js/gamemanger/GameTimeManager.js" type="text/javascript"></script>
         <script src="js/gamemanger/SpendGold.js" type="text/javascript"></script>
+        <script src="js/gamemanger/Paused.js" type="text/javascript"></script>
         <script src="js/gamemanger/HeroDeathManager.js" type="text/javascript"></script>
 
         <script type="text/javascript" src="js/entities/HUD.js"></script>

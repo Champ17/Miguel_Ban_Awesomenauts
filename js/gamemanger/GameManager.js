@@ -36,8 +36,8 @@ game.GainExpTimer = Object.extend({
             dataType: "text"
         })
                 .success(function(response) {
-                    if (response === "True") {
-                        me.state.change(me.state.MENU);
+                    if (response === "true") {
+                        alert("saved!");
                     } else {
                         alert(response);
                     }
@@ -45,6 +45,17 @@ game.GainExpTimer = Object.extend({
                 .fail(function(response) {
                     alert("Fail");
                 });
+                
+                if(game.data.win){
+                    game.data.win = '',
+                    me.state.change(me.state.WINZ);
+                     
+                }else if(!game.data.win){
+                    game.data.win = '',
+                    me.state.change(me.state.GAMEOVER);
+                }
+                
+                
     }
 }); 
 

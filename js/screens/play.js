@@ -25,6 +25,9 @@ game.PlayScreen = me.ScreenObject.extend({
         game.data.minimap = me.pool.pull("minimap", 10, 10, {});
         me.game.world.addChild(game.data.minimap, 30);
         
+        var pauseScreen = me.pool.pull("paused", 0, 0, {});
+        me.game.world.addChild(pauseScreen, 0);
+        
         game.data.gold += (game.data.exp2 + 1);
         console.log(game.data.gold);
 
@@ -32,6 +35,7 @@ game.PlayScreen = me.ScreenObject.extend({
         console.log(game.data.playerAttack);
 
         me.input.bindKey(me.input.KEY.B, "buy");
+        me.input.bindKey(me.input.KEY.P, "paused");
         me.input.bindKey(me.input.KEY.Q, "skill1");
         me.input.bindKey(me.input.KEY.W, "skill2");
         me.input.bindKey(me.input.KEY.E, "skill3");

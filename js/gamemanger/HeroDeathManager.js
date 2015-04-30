@@ -4,6 +4,7 @@ game.HeroDeathManager = Object.extend({
     },
     update: function() {
         if (game.data.player.dead) {
+            console.log("removing");
             me.game.world.removeChild(game.data.player);
             me.game.world.removeChild(game.data.miniplayer);
             me.state.current().resetPlayer(10, 0);

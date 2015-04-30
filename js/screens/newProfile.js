@@ -6,6 +6,7 @@ game.NewProfile = me.ScreenObject.extend({
         me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage("New-screen")), -10); // TODO
         document.getElementById("input").style.visibility = "visible";
         document.getElementById("register").style.visibility = "visible";
+        me.audio.playTrack("link");
 
         me.input.unbindKey(me.input.KEY.B);
         me.input.unbindKey(me.input.KEY.Q);
@@ -35,6 +36,7 @@ game.NewProfile = me.ScreenObject.extend({
      *  action to perform when leaving this screen (state change)
      */
     onDestroyEvent: function() {
+        me.audio.stopTrack();
         document.getElementById("input").style.visibility = "hidden";
         document.getElementById("register").style.visibility = "hidden";
     }

@@ -14,7 +14,6 @@ game.GameOverScreen = me.ScreenObject.extend({
                         
                     },
                     draw: function(renderer){
-                       //this.font.draw(renderer.getContext(), "Awesomenaunts", 450, 130 );
                        this.font.draw(renderer.getContext(), "Press Enter to reset", 350, 550);                                           
                     }
                 })));
@@ -59,4 +58,3 @@ game.GameOverScreen = me.ScreenObject.extend({
                     me.event.unsubscribe(this.handler); // TODO
 	}
 });
-
